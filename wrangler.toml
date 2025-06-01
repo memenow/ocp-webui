@@ -1,0 +1,6 @@
+# Wrangler configuration for Open Content Protocol
+name = "ocp-webui"
+compatibility_date = "2025-06-01"
+
+# Pages configuration
+pages_build_output_dir = ".svelte-kit/cloudflare"
