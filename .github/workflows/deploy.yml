@@ -1,0 +1,75 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Pages
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build application
+        run: pnpm run build
+        env:
+          PUBLIC_SUI_NETWORK: ${{ vars.PUBLIC_SUI_NETWORK || 'testnet' }}
+          PUBLIC_SUI_RPC_URL: ${{ vars.PUBLIC_SUI_RPC_URL || 'https://fullnode.testnet.sui.io:443' }}
+          PUBLIC_APP_NAME: ${{ vars.PUBLIC_APP_NAME || 'Open Content Protocol' }}
+          PUBLIC_APP_URL: ${{ vars.PUBLIC_APP_URL || 'https://ocp-webui.memenow.xyz' }}
+          PUBLIC_APP_DESCRIPTION: ${{ vars.PUBLIC_APP_DESCRIPTION || 'A decentralized content platform built on Sui blockchain' }}
+          PUBLIC_OCP_PACKAGE_ID: ${{ vars.PUBLIC_OCP_PACKAGE_ID }}
+          PUBLIC_OCP_CREATOR_MODULE: ${{ vars.PUBLIC_OCP_CREATOR_MODULE || 'ocp_creator' }}
+          PUBLIC_OCP_POST_MODULE: ${{ vars.PUBLIC_OCP_POST_MODULE || 'ocp_post' }}
+          PUBLIC_OCP_MEMBER_MODULE: ${{ vars.PUBLIC_OCP_MEMBER_MODULE || 'ocp_member' }}
+          PUBLIC_OCP_SUBSCRIBER_MODULE: ${{ vars.PUBLIC_OCP_SUBSCRIBER_MODULE || 'ocp_subscriber' }}
+          PUBLIC_OCP_PAID_MODULE: ${{ vars.PUBLIC_OCP_PAID_MODULE || 'ocp_paid' }}
+          PUBLIC_ENABLE_DARK_MODE: ${{ vars.PUBLIC_ENABLE_DARK_MODE || 'true' }}
+          PUBLIC_ENABLE_ANALYTICS: ${{ vars.PUBLIC_ENABLE_ANALYTICS || 'false' }}
+          PUBLIC_ENABLE_NOTIFICATIONS: ${{ vars.PUBLIC_ENABLE_NOTIFICATIONS || 'true' }}
+          PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.PUBLIC_GOOGLE_ANALYTICS_ID }}
+          PUBLIC_PLAUSIBLE_DOMAIN: ${{ vars.PUBLIC_PLAUSIBLE_DOMAIN }}
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ocp-webui
+          directory: .svelte-kit/cloudflare
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'
