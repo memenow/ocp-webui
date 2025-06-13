@@ -5,25 +5,27 @@
 
 <svelte:head>
 	<title>Open Content Protocol - Decentralized Content Platform</title>
-	<meta name="description" content="A decentralized, censorship-resistant content value network built on Sui blockchain for content creators and providers." />
+	<meta
+		name="description"
+		content="A decentralized, censorship-resistant content value network built on Sui blockchain for content creators and providers."
+	/>
 </svelte:head>
 
 <!-- Hero Section -->
 <section class="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white">
 	<div class="absolute inset-0 bg-black/20"></div>
-	<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+	<div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
 		<div class="text-center">
-			<h1 class="text-4xl md:text-6xl font-bold mb-6">
-				Open Content Protocol
-			</h1>
-			<p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-				A decentralized, censorship-resistant content value network built on Sui blockchain for content creators and individual providers.
+			<h1 class="mb-6 text-4xl font-bold md:text-6xl">Open Content Protocol</h1>
+			<p class="mx-auto mb-8 max-w-3xl text-xl text-blue-100 md:text-2xl">
+				A decentralized, censorship-resistant content value network built on Sui blockchain for
+				content creators and individual providers.
 			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+			<div class="flex flex-col justify-center gap-4 sm:flex-row">
 				{#if $walletConnected}
 					<a
 						href="/dashboard"
-						class="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+						class="inline-flex items-center rounded-lg bg-white px-8 py-3 font-semibold text-blue-600 transition-colors hover:bg-gray-100"
 					>
 						Go to Dashboard
 						<ArrowRight class="ml-2" size={20} />
@@ -31,7 +33,7 @@
 				{:else}
 					<a
 						href="/creators"
-						class="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+						class="inline-flex items-center rounded-lg bg-white px-8 py-3 font-semibold text-blue-600 transition-colors hover:bg-gray-100"
 					>
 						Explore Creators
 						<ArrowRight class="ml-2" size={20} />
@@ -39,7 +41,7 @@
 				{/if}
 				<a
 					href="/posts"
-					class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
+					class="inline-flex items-center rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-blue-600"
 				>
 					Browse Content
 				</a>
@@ -49,53 +51,65 @@
 </section>
 
 <!-- Features Section -->
-<section class="py-20 bg-white dark:bg-gray-800">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+<section class="bg-white py-20 dark:bg-gray-800">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="mb-16 text-center">
+			<h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
 				Why Choose Open Content Protocol?
 			</h2>
-			<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-				Built on Sui blockchain technology to provide creators and users with unprecedented control, security, and value.
+			<p class="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+				Built on Sui blockchain technology to provide creators and users with unprecedented control,
+				security, and value.
 			</p>
 		</div>
 
-		<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-			<div class="text-center p-6">
-				<div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+			<div class="p-6 text-center">
+				<div
+					class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900"
+				>
 					<Shield class="text-blue-600 dark:text-blue-400" size={32} />
 				</div>
-				<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Censorship Resistant</h3>
+				<h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
+					Censorship Resistant
+				</h3>
 				<p class="text-gray-600 dark:text-gray-300">
 					Content stored on blockchain ensures no single entity can censor or remove your work.
 				</p>
 			</div>
 
-			<div class="text-center p-6">
-				<div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+			<div class="p-6 text-center">
+				<div
+					class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900"
+				>
 					<Users class="text-purple-600 dark:text-purple-400" size={32} />
 				</div>
-				<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Creator Ownership</h3>
+				<h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Creator Ownership</h3>
 				<p class="text-gray-600 dark:text-gray-300">
-					Creators maintain full ownership and control over their content and subscriber relationships.
+					Creators maintain full ownership and control over their content and subscriber
+					relationships.
 				</p>
 			</div>
 
-			<div class="text-center p-6">
-				<div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+			<div class="p-6 text-center">
+				<div
+					class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900"
+				>
 					<Zap class="text-green-600 dark:text-green-400" size={32} />
 				</div>
-				<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Fast & Efficient</h3>
+				<h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Fast & Efficient</h3>
 				<p class="text-gray-600 dark:text-gray-300">
 					Built on Sui blockchain for lightning-fast transactions and low fees.
 				</p>
 			</div>
 
-			<div class="text-center p-6">
-				<div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mx-auto mb-4">
+			<div class="p-6 text-center">
+				<div
+					class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900"
+				>
 					<Globe class="text-indigo-600 dark:text-indigo-400" size={32} />
 				</div>
-				<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Global Access</h3>
+				<h3 class="mb-2 text-xl font-semibold text-gray-900 dark:text-white">Global Access</h3>
 				<p class="text-gray-600 dark:text-gray-300">
 					Accessible worldwide without geographical restrictions or traditional payment barriers.
 				</p>
@@ -105,45 +119,56 @@
 </section>
 
 <!-- How It Works Section -->
-<section class="py-20 bg-gray-50 dark:bg-gray-900">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+<section class="bg-gray-50 py-20 dark:bg-gray-900">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<div class="mb-16 text-center">
+			<h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
 				How It Works
 			</h2>
-			<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+			<p class="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
 				Simple steps to start creating, sharing, and monetizing content on the decentralized web.
 			</p>
 		</div>
 
-		<div class="grid md:grid-cols-3 gap-8">
-			<div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
-				<div class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+		<div class="grid gap-8 md:grid-cols-3">
+			<div class="rounded-lg bg-white p-8 shadow-sm dark:bg-gray-800">
+				<div
+					class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-xl font-bold text-white"
+				>
 					1
 				</div>
-				<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Connect Wallet</h3>
+				<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Connect Wallet</h3>
 				<p class="text-gray-600 dark:text-gray-300">
-					Connect your Sui wallet to start interacting with the platform. Your wallet is your identity and payment method.
+					Connect your Sui wallet to start interacting with the platform. Your wallet is your
+					identity and payment method.
 				</p>
 			</div>
 
-			<div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
-				<div class="w-12 h-12 bg-purple-600 text-white rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+			<div class="rounded-lg bg-white p-8 shadow-sm dark:bg-gray-800">
+				<div
+					class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-600 text-xl font-bold text-white"
+				>
 					2
 				</div>
-				<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Create or Subscribe</h3>
+				<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+					Create or Subscribe
+				</h3>
 				<p class="text-gray-600 dark:text-gray-300">
-					Become a creator to publish content, or subscribe to your favorite creators to access exclusive content.
+					Become a creator to publish content, or subscribe to your favorite creators to access
+					exclusive content.
 				</p>
 			</div>
 
-			<div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm">
-				<div class="w-12 h-12 bg-green-600 text-white rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+			<div class="rounded-lg bg-white p-8 shadow-sm dark:bg-gray-800">
+				<div
+					class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-600 text-xl font-bold text-white"
+				>
 					3
 				</div>
-				<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Earn & Engage</h3>
+				<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Earn & Engage</h3>
 				<p class="text-gray-600 dark:text-gray-300">
-					Creators earn directly from subscribers and custom content requests. Users get access to premium content.
+					Creators earn directly from subscribers and custom content requests. Users get access to
+					premium content.
 				</p>
 			</div>
 		</div>
@@ -151,26 +176,26 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-blue-600">
-	<div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-		<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+<section class="bg-blue-600 py-20">
+	<div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+		<h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">
 			Ready to Join the Future of Content?
 		</h2>
-		<p class="text-xl text-blue-100 mb-8">
+		<p class="mb-8 text-xl text-blue-100">
 			Start creating, sharing, and monetizing content on a truly decentralized platform.
 		</p>
 		{#if !$walletConnected}
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+			<div class="flex flex-col justify-center gap-4 sm:flex-row">
 				<a
 					href="/creators"
-					class="inline-flex items-center px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+					class="inline-flex items-center rounded-lg bg-white px-8 py-3 font-semibold text-blue-600 transition-colors hover:bg-gray-100"
 				>
 					Explore Creators
 					<ArrowRight class="ml-2" size={20} />
 				</a>
 				<a
 					href="/posts"
-					class="inline-flex items-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
+					class="inline-flex items-center rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-blue-600"
 				>
 					Browse Content
 				</a>

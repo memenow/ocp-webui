@@ -142,6 +142,7 @@ The project uses GitHub Actions for automated deployment to Cloudflare Pages:
 1. **Fork or clone the repository** to your GitHub account
 
 2. **Set up repository secrets** in GitHub:
+
    - Go to your repository settings
    - Navigate to **Secrets and variables** > **Actions**
    - Add the following secrets:
@@ -149,6 +150,7 @@ The project uses GitHub Actions for automated deployment to Cloudflare Pages:
      - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
 
 3. **Configure repository variables** (optional):
+
    - In the same section, go to **Variables** tab
    - Add any environment variables you want to override:
      - `PUBLIC_SUI_NETWORK`
@@ -163,6 +165,7 @@ The project uses GitHub Actions for automated deployment to Cloudflare Pages:
 ### Getting Cloudflare Credentials
 
 1. **API Token**:
+
    - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/profile/api-tokens)
    - Create a custom token with:
      - Permissions: `Cloudflare Pages:Edit`

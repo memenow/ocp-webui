@@ -18,12 +18,11 @@
 				console.log('No wallet connected');
 			}
 		}
-
 	});
 
 	async function connectWallet() {
 		if (typeof window === 'undefined') return;
-		
+
 		isConnecting = true;
 		try {
 			// Try Sui Wallet first
@@ -57,13 +56,13 @@
 
 {#if $walletConnected && $walletAddress}
 	<div class="flex items-center space-x-3">
-		<div class="hidden sm:flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
+		<div class="hidden items-center space-x-2 text-sm text-gray-600 sm:flex dark:text-gray-400">
 			<Wallet size={16} />
 			<span class="font-mono">{formatAddress($walletAddress)}</span>
 		</div>
 		<button
 			on:click={disconnectWallet}
-			class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+			class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-red-600 dark:text-gray-300 dark:hover:text-red-400"
 		>
 			<LogOut size={16} />
 			<span class="hidden sm:inline">Disconnect</span>
@@ -73,7 +72,7 @@
 	<button
 		on:click={connectWallet}
 		disabled={isConnecting}
-		class="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white rounded-lg font-medium transition-colors"
+		class="flex items-center space-x-2 rounded-lg bg-blue-600 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-700 disabled:bg-blue-400"
 	>
 		<Wallet size={16} />
 		<span>{isConnecting ? 'Connecting...' : 'Connect Wallet'}</span>

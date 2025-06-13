@@ -9,7 +9,8 @@
 			id: '0x1111111111111111',
 			creatorId: '0x1234567890abcdef',
 			url: 'https://example.com/post1',
-			description: 'Complete guide to blockchain development with Sui - Learn the fundamentals and build your first dApp',
+			description:
+				'Complete guide to blockchain development with Sui - Learn the fundamentals and build your first dApp',
 			accessLevel: AccessLevel.PUBLIC,
 			owner: '0x1234567890abcdef'
 		},
@@ -86,7 +87,7 @@
 	}
 
 	let selectedFilter = 'all';
-	$: filteredPosts = posts.filter(post => {
+	$: filteredPosts = posts.filter((post) => {
 		if (selectedFilter === 'all') return true;
 		if (selectedFilter === 'public') return post.accessLevel === AccessLevel.PUBLIC;
 		if (selectedFilter === 'subscriber') return post.accessLevel === AccessLevel.SUBSCRIBER;
@@ -97,100 +98,104 @@
 
 <svelte:head>
 	<title>Posts - Open Content Protocol</title>
-	<meta name="description" content="Browse exclusive content from creators on the Open Content Protocol platform" />
+	<meta
+		name="description"
+		content="Browse exclusive content from creators on the Open Content Protocol platform"
+	/>
 </svelte:head>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 	<!-- Header -->
-	<div class="text-center mb-12">
-		<h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-			Browse Content
-		</h1>
-		<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-			Discover exclusive content from talented creators. Access free posts or subscribe for premium content.
+	<div class="mb-12 text-center">
+		<h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Browse Content</h1>
+		<p class="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+			Discover exclusive content from talented creators. Access free posts or subscribe for premium
+			content.
 		</p>
 	</div>
 
 	<!-- Filters -->
 	<div class="mb-8">
-		<div class="flex flex-wrap gap-2 justify-center">
+		<div class="flex flex-wrap justify-center gap-2">
 			<button
-				class="px-4 py-2 rounded-lg font-medium transition-colors {selectedFilter === 'all' 
-					? 'bg-blue-600 text-white' 
-					: 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'}"
-				on:click={() => selectedFilter = 'all'}
+				class="rounded-lg px-4 py-2 font-medium transition-colors {selectedFilter === 'all'
+					? 'bg-blue-600 text-white'
+					: 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'}"
+				on:click={() => (selectedFilter = 'all')}
 			>
 				All Posts
 			</button>
 			<button
-				class="px-4 py-2 rounded-lg font-medium transition-colors {selectedFilter === 'public' 
-					? 'bg-green-600 text-white' 
-					: 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'}"
-				on:click={() => selectedFilter = 'public'}
+				class="rounded-lg px-4 py-2 font-medium transition-colors {selectedFilter === 'public'
+					? 'bg-green-600 text-white'
+					: 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'}"
+				on:click={() => (selectedFilter = 'public')}
 			>
-				<Globe size={16} class="inline mr-1" />
+				<Globe size={16} class="mr-1 inline" />
 				Public
 			</button>
 			<button
-				class="px-4 py-2 rounded-lg font-medium transition-colors {selectedFilter === 'subscriber' 
-					? 'bg-blue-600 text-white' 
-					: 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'}"
-				on:click={() => selectedFilter = 'subscriber'}
+				class="rounded-lg px-4 py-2 font-medium transition-colors {selectedFilter === 'subscriber'
+					? 'bg-blue-600 text-white'
+					: 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'}"
+				on:click={() => (selectedFilter = 'subscriber')}
 			>
-				<Users size={16} class="inline mr-1" />
+				<Users size={16} class="mr-1 inline" />
 				Subscriber
 			</button>
 			<button
-				class="px-4 py-2 rounded-lg font-medium transition-colors {selectedFilter === 'member' 
-					? 'bg-purple-600 text-white' 
-					: 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'}"
-				on:click={() => selectedFilter = 'member'}
+				class="rounded-lg px-4 py-2 font-medium transition-colors {selectedFilter === 'member'
+					? 'bg-purple-600 text-white'
+					: 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'}"
+				on:click={() => (selectedFilter = 'member')}
 			>
-				<Lock size={16} class="inline mr-1" />
+				<Lock size={16} class="mr-1 inline" />
 				Member
 			</button>
 		</div>
 	</div>
 
 	<!-- Stats -->
-	<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-		<div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-sm">
-			<div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">{posts.length}</div>
+	<div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-4">
+		<div class="rounded-lg bg-white p-6 text-center shadow-sm dark:bg-gray-800">
+			<div class="mb-2 text-3xl font-bold text-blue-600 dark:text-blue-400">{posts.length}</div>
 			<div class="text-gray-600 dark:text-gray-300">Total Posts</div>
 		</div>
-		<div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-sm">
-			<div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
-				{posts.filter(p => p.accessLevel === AccessLevel.PUBLIC).length}
+		<div class="rounded-lg bg-white p-6 text-center shadow-sm dark:bg-gray-800">
+			<div class="mb-2 text-3xl font-bold text-green-600 dark:text-green-400">
+				{posts.filter((p) => p.accessLevel === AccessLevel.PUBLIC).length}
 			</div>
 			<div class="text-gray-600 dark:text-gray-300">Public Posts</div>
 		</div>
-		<div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-sm">
-			<div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-				{posts.filter(p => p.accessLevel === AccessLevel.SUBSCRIBER).length}
+		<div class="rounded-lg bg-white p-6 text-center shadow-sm dark:bg-gray-800">
+			<div class="mb-2 text-3xl font-bold text-blue-600 dark:text-blue-400">
+				{posts.filter((p) => p.accessLevel === AccessLevel.SUBSCRIBER).length}
 			</div>
 			<div class="text-gray-600 dark:text-gray-300">Subscriber Posts</div>
 		</div>
-		<div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-sm">
-			<div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-				{posts.filter(p => p.accessLevel === AccessLevel.MEMBER).length}
+		<div class="rounded-lg bg-white p-6 text-center shadow-sm dark:bg-gray-800">
+			<div class="mb-2 text-3xl font-bold text-purple-600 dark:text-purple-400">
+				{posts.filter((p) => p.accessLevel === AccessLevel.MEMBER).length}
 			</div>
 			<div class="text-gray-600 dark:text-gray-300">Member Posts</div>
 		</div>
 	</div>
 
 	<!-- Posts Grid -->
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+	<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 		{#each filteredPosts as post (post.id)}
 			{@const accessInfo = getAccessLevelInfo(post.accessLevel)}
 			{@const hasAccess = canAccess(post.accessLevel)}
-			<div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+			<div
+				class="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md dark:bg-gray-800"
+			>
 				<!-- Post Header -->
 				<div class="p-6">
-					<div class="flex items-start justify-between mb-4">
+					<div class="mb-4 flex items-start justify-between">
 						<div class="flex-1">
-							<div class="flex items-center space-x-2 mb-2">
+							<div class="mb-2 flex items-center space-x-2">
 								<FileText size={20} class="text-gray-400 dark:text-gray-600" />
-								<span class="text-sm text-gray-500 dark:text-gray-400 font-mono">
+								<span class="font-mono text-sm text-gray-500 dark:text-gray-400">
 									{formatAddress(post.id)}
 								</span>
 							</div>
@@ -198,17 +203,19 @@
 								by {formatAddress(post.creatorId)}
 							</p>
 						</div>
-						<div class="flex items-center space-x-1 px-2.5 py-1 rounded-full text-xs font-medium {accessInfo.bgColor} {accessInfo.color}">
+						<div
+							class="flex items-center space-x-1 rounded-full px-2.5 py-1 text-xs font-medium {accessInfo.bgColor} {accessInfo.color}"
+						>
 							<svelte:component this={accessInfo.icon} size={12} />
 							<span>{accessInfo.label}</span>
 						</div>
 					</div>
 
-					<p class="text-gray-900 dark:text-white mb-4 line-clamp-3">
+					<p class="mb-4 line-clamp-3 text-gray-900 dark:text-white">
 						{post.description}
 					</p>
 
-					<div class="text-xs text-gray-500 dark:text-gray-400 mb-4">
+					<div class="mb-4 text-xs text-gray-500 dark:text-gray-400">
 						{accessInfo.description}
 					</div>
 
@@ -219,7 +226,7 @@
 								href={post.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors text-center"
+								class="flex-1 rounded-lg bg-blue-600 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-blue-700"
 							>
 								View Content
 							</a>
@@ -227,15 +234,21 @@
 								href={post.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="flex items-center justify-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+								class="flex items-center justify-center rounded-lg border border-gray-300 px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
 							>
 								<ExternalLink size={16} />
 							</a>
 						{:else}
-							<button class="flex-1 bg-gray-400 text-white px-4 py-2 rounded-lg font-medium cursor-not-allowed">
-								{post.accessLevel === AccessLevel.SUBSCRIBER ? 'Subscribe Required' : 'Membership Required'}
+							<button
+								class="flex-1 cursor-not-allowed rounded-lg bg-gray-400 px-4 py-2 font-medium text-white"
+							>
+								{post.accessLevel === AccessLevel.SUBSCRIBER
+									? 'Subscribe Required'
+									: 'Membership Required'}
 							</button>
-							<button class="flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+							<button
+								class="flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+							>
 								{post.accessLevel === AccessLevel.SUBSCRIBER ? 'Subscribe' : 'Join'}
 							</button>
 						{/if}
@@ -243,7 +256,7 @@
 				</div>
 
 				<!-- Post Footer -->
-				<div class="bg-gray-50 dark:bg-gray-700 px-6 py-4">
+				<div class="bg-gray-50 px-6 py-4 dark:bg-gray-700">
 					<div class="flex justify-between text-sm text-gray-600 dark:text-gray-300">
 						<div class="flex items-center space-x-1">
 							<Calendar size={14} />
@@ -261,9 +274,9 @@
 
 	<!-- Empty State -->
 	{#if filteredPosts.length === 0}
-		<div class="text-center py-12">
-			<FileText class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-600 mb-4" />
-			<h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">No posts found</h3>
+		<div class="py-12 text-center">
+			<FileText class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-600" />
+			<h3 class="mb-2 text-lg font-medium text-gray-900 dark:text-white">No posts found</h3>
 			<p class="text-gray-600 dark:text-gray-300">
 				Try adjusting your filters or check back later for new content.
 			</p>
@@ -272,16 +285,21 @@
 
 	<!-- Call to Action -->
 	<div class="mt-16 text-center">
-		<div class="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg p-8 text-white">
-			<h2 class="text-2xl font-bold mb-4">Want Access to Premium Content?</h2>
-			<p class="text-purple-100 mb-6 max-w-2xl mx-auto">
-				Subscribe to your favorite creators or become a member to unlock exclusive content and support the creators you love.
+		<div class="rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 p-8 text-white">
+			<h2 class="mb-4 text-2xl font-bold">Want Access to Premium Content?</h2>
+			<p class="mx-auto mb-6 max-w-2xl text-purple-100">
+				Subscribe to your favorite creators or become a member to unlock exclusive content and
+				support the creators you love.
 			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<button class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+			<div class="flex flex-col justify-center gap-4 sm:flex-row">
+				<button
+					class="rounded-lg bg-white px-8 py-3 font-semibold text-purple-600 transition-colors hover:bg-gray-100"
+				>
 					Browse Creators
 				</button>
-				<button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+				<button
+					class="rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-purple-600"
+				>
 					Learn More
 				</button>
 			</div>
