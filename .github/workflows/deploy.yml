@@ -50,7 +50,7 @@ jobs:
         run: pnpm run lint
 
       - name: Setup Claude Code
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@beta
         with:
           api-key: ${{ secrets.CLAUDE_API_KEY }}
 
