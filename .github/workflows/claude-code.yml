@@ -14,20 +14,29 @@ concurrency:
 
 jobs:
   claude-code:
-    if: github.actor == 'BillDuke13'
+    if: |
+      github.actor == 'BillDuke13' && (
+        github.event_name == 'pull_request' ||
+        (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+        github.event_name == 'issues'
+      )
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
-      pull-requests: read
-      issues: read
+      pull-requests: write
+      issues: write
+      actions: read
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Claude Code
         uses: anthropics/claude-code-action@beta
         with:
-          anthropic_api_key: ${{ secrets.CLAUDE_API_KEY }}
-          github_token: ${{ secrets.CLAUDE_CODE_GITHUB_TOKEN }}
+          trigger_phrase: "@claude"
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          use_bedrock: false
+          use_vertex: false
+          timeout_minutes: 30
