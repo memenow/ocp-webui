@@ -73,7 +73,7 @@
 
 	<!-- Creators Grid -->
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-		{#each creators as creator}
+		{#each creators as creator (creator.id)}
 			<div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
 				<!-- Creator Header -->
 				<div class="p-6">
@@ -101,7 +101,7 @@
 					<div class="mb-4">
 						<h4 class="text-sm font-medium text-gray-900 dark:text-white mb-2">Membership Tiers</h4>
 						<div class="flex flex-wrap gap-2">
-							{#each creator.memberPrices as price, index}
+							{#each creator.memberPrices as price, index (index)}
 								<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
 									Tier {index + 1}: {formatPrice(price)}
 								</span>

@@ -134,7 +134,7 @@
 				</div>
 				<div class="p-6">
 					<div class="space-y-4">
-						{#each recentActivity as activity}
+						{#each recentActivity as activity, index (index)}
 							<div class="flex items-start space-x-3">
 								<div class="w-2 h-2 bg-blue-600 rounded-full mt-2"></div>
 								<div class="flex-1">

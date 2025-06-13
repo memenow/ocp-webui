@@ -4,7 +4,6 @@
 	import { onMount } from 'svelte';
 
 	let isConnecting = false;
-	let availableWallets: any[] = [];
 
 	onMount(async () => {
 		// Check if wallet is already connected
@@ -15,17 +14,11 @@
 					walletConnected.set(true);
 					walletAddress.set(accounts[0]);
 				}
-			} catch (error) {
+			} catch {
 				console.log('No wallet connected');
 			}
 		}
 
-		// Get available wallets
-		if (typeof window !== 'undefined') {
-			availableWallets = Object.keys(window).filter(key => 
-				key.includes('Wallet') || key.includes('wallet')
-			);
-		}
 	});
 
 	async function connectWallet() {

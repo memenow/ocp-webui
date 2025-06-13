@@ -13,9 +13,9 @@ declare global {
 		suiWallet?: {
 			requestPermissions(): Promise<void>;
 			getAccounts(): Promise<string[]>;
-			signAndExecuteTransactionBlock(input: any): Promise<any>;
+			signAndExecuteTransactionBlock(input: unknown): Promise<unknown>;
 		};
-		[key: string]: any;
+		[key: string]: unknown;
 	}
 }
 

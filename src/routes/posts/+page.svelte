@@ -180,7 +180,7 @@
 
 	<!-- Posts Grid -->
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-		{#each filteredPosts as post}
+		{#each filteredPosts as post (post.id)}
 			{@const accessInfo = getAccessLevelInfo(post.accessLevel)}
 			{@const hasAccess = canAccess(post.accessLevel)}
 			<div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
