@@ -8,17 +8,24 @@ on:
   issues:
     types: [opened]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   claude-code:
+    if: github.actor == 'BillDuke13'
     runs-on: ubuntu-latest
-    name: Claude Code Assistant
     permissions:
       contents: read
       id-token: write
-      pull-requests: write
-      issues: write
+      pull-requests: read
+      issues: read
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Setup Claude Code
         uses: anthropics/claude-code-action@beta
         with:
