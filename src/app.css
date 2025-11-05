@@ -1,3 +1,109 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* Glassmorphism Theme Variables */
+:root {
+	/* Background Colors */
+	--glass-bg-light: #f8f9fa;
+	--glass-bg-gradient-start: #e0f2fe;
+	--glass-bg-gradient-end: #f0f9ff;
+
+	/* Glass Surface Colors */
+	--glass-surface: rgba(255, 255, 255, 0.75);
+	--glass-surface-hover: rgba(255, 255, 255, 0.85);
+	--glass-border: rgba(255, 255, 255, 0.3);
+	--glass-border-strong: rgba(255, 255, 255, 0.5);
+
+	/* Shadow */
+	--glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+	--glass-shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.08);
+
+	/* Blur */
+	--glass-blur: 12px;
+	--glass-blur-strong: 20px;
+
+	/* Accent Colors */
+	--accent-blue: #3b82f6;
+	--accent-purple: #a855f7;
+	--accent-green: #10b981;
+	--accent-cyan: #06b6d4;
+}
+
+.dark {
+	/* Dark Mode Glass Variables */
+	--glass-bg-light: #0f172a;
+	--glass-bg-gradient-start: #1e293b;
+	--glass-bg-gradient-end: #0f172a;
+
+	--glass-surface: rgba(30, 41, 59, 0.7);
+	--glass-surface-hover: rgba(30, 41, 59, 0.85);
+	--glass-border: rgba(148, 163, 184, 0.15);
+	--glass-border-strong: rgba(148, 163, 184, 0.3);
+
+	--glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+	--glass-shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Base Glass Utility Classes */
+.glass {
+	background: var(--glass-surface);
+	backdrop-filter: blur(var(--glass-blur));
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	border: 1px solid var(--glass-border);
+	box-shadow: var(--glass-shadow);
+}
+
+.glass-strong {
+	background: var(--glass-surface-hover);
+	backdrop-filter: blur(var(--glass-blur-strong));
+	-webkit-backdrop-filter: blur(var(--glass-blur-strong));
+	border: 1px solid var(--glass-border-strong);
+	box-shadow: var(--glass-shadow);
+}
+
+.glass-hover {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-hover:hover {
+	background: var(--glass-surface-hover);
+	box-shadow: var(--glass-shadow-hover);
+	transform: translateY(-2px);
+}
+
+/* Gradient Background */
+.bg-glass-gradient {
+	background: linear-gradient(135deg, var(--glass-bg-gradient-start) 0%, var(--glass-bg-gradient-end) 100%);
+}
+
+/* Smooth Animations */
+@keyframes glass-float {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+.glass-float {
+	animation: glass-float 6s ease-in-out infinite;
+}
+
+/* Accessibility - Ensure Text Contrast */
+.glass-text-primary {
+	color: #111827;
+}
+
+.dark .glass-text-primary {
+	color: #f9fafb;
+}
+
+.glass-text-secondary {
+	color: #4b5563;
+}
+
+.dark .glass-text-secondary {
+	color: #d1d5db;
+}
