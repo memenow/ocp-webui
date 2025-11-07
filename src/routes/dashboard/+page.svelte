@@ -47,103 +47,107 @@
 {#if $walletConnected}
 	<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 		<!-- Header -->
-		<div class="mb-8">
-			<h1 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
-			<p class="text-gray-600 dark:text-gray-300">
-				Welcome back, {formatAddress($walletAddress || '')}
-			</p>
+		<div class="mb-10">
+			<h1 class="glass-text-primary mb-3 text-4xl font-bold">Dashboard</h1>
+			<div class="glass inline-block rounded-2xl px-6 py-3">
+				<p class="glass-text-secondary font-medium">
+					Welcome back, <span class="glass-text-primary font-bold"
+						>{formatAddress($walletAddress || '')}</span
+					>
+				</p>
+			</div>
 		</div>
 
 		<!-- Quick Actions -->
-		<div class="mb-8 grid grid-cols-1 gap-4 md:grid-cols-4">
+		<div class="mb-10 grid grid-cols-1 gap-4 md:grid-cols-4">
 			<button
-				class="flex items-center space-x-3 rounded-lg bg-blue-600 p-4 text-white transition-colors hover:bg-blue-700"
+				class="glass-hover flex items-center space-x-3 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 p-5 text-white shadow-lg transition-all"
 			>
-				<Plus size={20} />
-				<span class="font-medium">Create Post</span>
+				<Plus size={22} />
+				<span class="font-bold">Create Post</span>
 			</button>
 			<button
-				class="flex items-center space-x-3 rounded-lg bg-purple-600 p-4 text-white transition-colors hover:bg-purple-700"
+				class="glass-hover flex items-center space-x-3 rounded-2xl bg-gradient-to-r from-purple-500 to-purple-600 p-5 text-white shadow-lg transition-all"
 			>
-				<Crown size={20} />
-				<span class="font-medium">Become Creator</span>
+				<Crown size={22} />
+				<span class="font-bold">Become Creator</span>
 			</button>
 			<button
-				class="flex items-center space-x-3 rounded-lg bg-green-600 p-4 text-white transition-colors hover:bg-green-700"
+				class="glass-hover flex items-center space-x-3 rounded-2xl bg-gradient-to-r from-green-500 to-green-600 p-5 text-white shadow-lg transition-all"
 			>
-				<Users size={20} />
-				<span class="font-medium">Find Creators</span>
+				<Users size={22} />
+				<span class="font-bold">Find Creators</span>
 			</button>
 			<button
-				class="flex items-center space-x-3 rounded-lg bg-gray-600 p-4 text-white transition-colors hover:bg-gray-700"
+				class="glass-hover flex items-center space-x-3 rounded-2xl bg-gradient-to-r from-gray-500 to-gray-600 p-5 text-white shadow-lg transition-all"
 			>
-				<Settings size={20} />
-				<span class="font-medium">Settings</span>
+				<Settings size={22} />
+				<span class="font-bold">Settings</span>
 			</button>
 		</div>
 
 		<!-- Stats Overview -->
-		<div class="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+		<div class="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
 			{#if userStats.isCreator}
-				<div class="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+				<div class="glass glass-hover rounded-3xl p-6">
 					<div class="flex items-center justify-between">
 						<div>
-							<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Total Posts</p>
-							<p class="text-2xl font-bold text-gray-900 dark:text-white">{userStats.totalPosts}</p>
+							<p class="glass-text-secondary mb-2 text-sm font-semibold">Total Posts</p>
+							<p class="glass-text-primary text-3xl font-bold">{userStats.totalPosts}</p>
 						</div>
 						<div
-							class="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900"
+							class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg"
 						>
-							<FileText class="text-blue-600 dark:text-blue-400" size={24} />
+							<FileText class="text-white" size={28} />
 						</div>
 					</div>
 				</div>
 
-				<div class="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+				<div class="glass glass-hover rounded-3xl p-6">
 					<div class="flex items-center justify-between">
 						<div>
-							<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Subscribers</p>
-							<p class="text-2xl font-bold text-gray-900 dark:text-white">
+							<p class="glass-text-secondary mb-2 text-sm font-semibold">Subscribers</p>
+							<p class="glass-text-primary text-3xl font-bold">
 								{userStats.totalSubscribers}
 							</p>
 						</div>
 						<div
-							class="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900"
+							class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg"
 						>
-							<Users class="text-purple-600 dark:text-purple-400" size={24} />
+							<Users class="text-white" size={28} />
 						</div>
 					</div>
 				</div>
 
-				<div class="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+				<div class="glass glass-hover rounded-3xl p-6">
 					<div class="flex items-center justify-between">
 						<div>
-							<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Total Earnings</p>
-							<p class="text-2xl font-bold text-gray-900 dark:text-white">
-								{userStats.totalEarnings} SUI
+							<p class="glass-text-secondary mb-2 text-sm font-semibold">Total Earnings</p>
+							<p class="glass-text-primary text-3xl font-bold">
+								{userStats.totalEarnings} <span class="text-lg">SUI</span>
 							</p>
 						</div>
 						<div
-							class="flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900"
+							class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-green-600 shadow-lg"
 						>
-							<TrendingUp class="text-green-600 dark:text-green-400" size={24} />
+							<TrendingUp class="text-white" size={28} />
 						</div>
 					</div>
 				</div>
 			{/if}
 
-			<div class="rounded-lg bg-white p-6 shadow-sm dark:bg-gray-800">
+			<div class="glass glass-hover rounded-3xl p-6">
 				<div class="flex items-center justify-between">
 					<div>
-						<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Subscriptions</p>
-						<p class="text-2xl font-bold text-gray-900 dark:text-white">
+						<p class="glass-text-secondary mb-2 text-sm font-semibold">Subscriptions</p>
+						<p class="glass-text-primary text-3xl font-bold">
 							{userStats.subscriptions}
 						</p>
 					</div>
 					<div
-						class="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-100 dark:bg-indigo-900"
+						class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-indigo-600 shadow-lg"
 					>
-						<Crown class="text-indigo-600 dark:text-indigo-400" size={24} />
+						<Crown class="text-white" size={28} />
 					</div>
 				</div>
 			</div>
@@ -151,18 +155,22 @@
 
 		<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 			<!-- Recent Activity -->
-			<div class="rounded-lg bg-white shadow-sm dark:bg-gray-800">
-				<div class="border-b border-gray-200 p-6 dark:border-gray-700">
-					<h2 class="text-lg font-semibold text-gray-900 dark:text-white">Recent Activity</h2>
+			<div class="glass rounded-3xl">
+				<div class="border-b border-white/20 p-6">
+					<h2 class="glass-text-primary text-xl font-bold">Recent Activity</h2>
 				</div>
 				<div class="p-6">
-					<div class="space-y-4">
+					<div class="space-y-5">
 						{#each recentActivity as activity, index (index)}
-							<div class="flex items-start space-x-3">
-								<div class="mt-2 h-2 w-2 rounded-full bg-blue-600"></div>
+							<div
+								class="glass glass-hover flex items-start space-x-4 rounded-2xl p-4 transition-all"
+							>
+								<div
+									class="mt-2 h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg"
+								></div>
 								<div class="flex-1">
-									<p class="text-sm text-gray-900 dark:text-white">{activity.title}</p>
-									<p class="text-xs text-gray-500 dark:text-gray-400">{activity.time}</p>
+									<p class="glass-text-primary text-sm font-semibold">{activity.title}</p>
+									<p class="glass-text-secondary text-xs">{activity.time}</p>
 								</div>
 							</div>
 						{/each}
@@ -172,48 +180,48 @@
 
 			<!-- Creator Tools -->
 			{#if userStats.isCreator}
-				<div class="rounded-lg bg-white shadow-sm dark:bg-gray-800">
-					<div class="border-b border-gray-200 p-6 dark:border-gray-700">
-						<h2 class="text-lg font-semibold text-gray-900 dark:text-white">Creator Tools</h2>
+				<div class="glass rounded-3xl">
+					<div class="border-b border-white/20 p-6">
+						<h2 class="glass-text-primary text-xl font-bold">Creator Tools</h2>
 					</div>
 					<div class="p-6">
 						<div class="space-y-4">
-							<button
-								class="w-full rounded-lg border border-gray-200 p-4 text-left transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700"
-							>
-								<div class="flex items-center space-x-3">
-									<Plus class="text-blue-600 dark:text-blue-400" size={20} />
+							<button class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all">
+								<div class="flex items-center space-x-4">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg"
+									>
+										<Plus class="text-white" size={22} />
+									</div>
 									<div>
-										<p class="font-medium text-gray-900 dark:text-white">Create New Post</p>
-										<p class="text-sm text-gray-500 dark:text-gray-400">
-											Share content with your audience
-										</p>
+										<p class="glass-text-primary font-bold">Create New Post</p>
+										<p class="glass-text-secondary text-sm">Share content with your audience</p>
 									</div>
 								</div>
 							</button>
-							<button
-								class="w-full rounded-lg border border-gray-200 p-4 text-left transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700"
-							>
-								<div class="flex items-center space-x-3">
-									<Users class="text-purple-600 dark:text-purple-400" size={20} />
+							<button class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all">
+								<div class="flex items-center space-x-4">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg"
+									>
+										<Users class="text-white" size={22} />
+									</div>
 									<div>
-										<p class="font-medium text-gray-900 dark:text-white">Manage Subscribers</p>
-										<p class="text-sm text-gray-500 dark:text-gray-400">
-											View and manage your subscriber base
-										</p>
+										<p class="glass-text-primary font-bold">Manage Subscribers</p>
+										<p class="glass-text-secondary text-sm">View and manage your subscriber base</p>
 									</div>
 								</div>
 							</button>
-							<button
-								class="w-full rounded-lg border border-gray-200 p-4 text-left transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700"
-							>
-								<div class="flex items-center space-x-3">
-									<TrendingUp class="text-green-600 dark:text-green-400" size={20} />
+							<button class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all">
+								<div class="flex items-center space-x-4">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-green-400 to-green-600 shadow-lg"
+									>
+										<TrendingUp class="text-white" size={22} />
+									</div>
 									<div>
-										<p class="font-medium text-gray-900 dark:text-white">Analytics</p>
-										<p class="text-sm text-gray-500 dark:text-gray-400">
-											Track your performance and earnings
-										</p>
+										<p class="glass-text-primary font-bold">Analytics</p>
+										<p class="glass-text-secondary text-sm">Track your performance and earnings</p>
 									</div>
 								</div>
 							</button>
@@ -222,68 +230,78 @@
 				</div>
 			{:else}
 				<!-- Become Creator CTA -->
-				<div class="rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
-					<h2 class="mb-4 text-xl font-bold">Become a Creator</h2>
-					<p class="mb-6 text-blue-100">
-						Start monetizing your content and building your audience on the decentralized web.
-					</p>
-					<button
-						class="rounded-lg bg-white px-6 py-3 font-semibold text-blue-600 transition-colors hover:bg-gray-100"
-					>
-						Get Started
-					</button>
+				<div
+					class="glass-strong overflow-hidden rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-xl"
+				>
+					<div class="relative">
+						<h2 class="mb-4 text-2xl font-bold">Become a Creator</h2>
+						<p class="mb-6">
+							Start monetizing your content and building your audience on the decentralized web.
+						</p>
+						<button
+							class="glass-hover rounded-2xl bg-white px-6 py-3 font-bold text-purple-600 shadow-lg transition-all"
+						>
+							Get Started
+						</button>
+					</div>
 				</div>
 			{/if}
 		</div>
 
 		<!-- My Subscriptions -->
-		<div class="mt-8 rounded-lg bg-white shadow-sm dark:bg-gray-800">
-			<div class="border-b border-gray-200 p-6 dark:border-gray-700">
-				<h2 class="text-lg font-semibold text-gray-900 dark:text-white">My Subscriptions</h2>
+		<div class="glass mt-10 rounded-3xl">
+			<div class="border-b border-white/20 p-6">
+				<h2 class="glass-text-primary text-xl font-bold">My Subscriptions</h2>
 			</div>
 			<div class="p-6">
-				<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-					<div class="rounded-lg border border-gray-200 p-4 dark:border-gray-700">
-						<div class="mb-3 flex items-center space-x-3">
+				<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+					<div class="glass glass-hover rounded-2xl p-5">
+						<div class="mb-4 flex items-center space-x-3">
 							<img
 								src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
 								alt="Creator"
-								class="h-10 w-10 rounded-full"
+								class="h-12 w-12 rounded-full ring-2 ring-blue-500 ring-offset-2 ring-offset-transparent"
 							/>
 							<div>
-								<p class="font-medium text-gray-900 dark:text-white">Digital Artist</p>
-								<p class="text-sm text-gray-500 dark:text-gray-400">Tier 2 Member</p>
+								<p class="glass-text-primary font-bold">Digital Artist</p>
+								<p class="glass-text-secondary text-sm">Tier 2 Member</p>
 							</div>
 						</div>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Expires in 25 days</p>
+						<p class="glass-text-secondary text-sm">
+							Expires in <span class="glass-text-primary font-semibold">25 days</span>
+						</p>
 					</div>
-					<div class="rounded-lg border border-gray-200 p-4 dark:border-gray-700">
-						<div class="mb-3 flex items-center space-x-3">
+					<div class="glass glass-hover rounded-2xl p-5">
+						<div class="mb-4 flex items-center space-x-3">
 							<img
 								src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
 								alt="Creator"
-								class="h-10 w-10 rounded-full"
+								class="h-12 w-12 rounded-full ring-2 ring-purple-500 ring-offset-2 ring-offset-transparent"
 							/>
 							<div>
-								<p class="font-medium text-gray-900 dark:text-white">Tech Educator</p>
-								<p class="text-sm text-gray-500 dark:text-gray-400">Subscriber</p>
+								<p class="glass-text-primary font-bold">Tech Educator</p>
+								<p class="glass-text-secondary text-sm">Subscriber</p>
 							</div>
 						</div>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Active subscription</p>
+						<p class="glass-text-secondary text-sm">
+							<span class="glass-text-primary font-semibold">Active</span> subscription
+						</p>
 					</div>
-					<div class="rounded-lg border border-gray-200 p-4 dark:border-gray-700">
-						<div class="mb-3 flex items-center space-x-3">
+					<div class="glass glass-hover rounded-2xl p-5">
+						<div class="mb-4 flex items-center space-x-3">
 							<img
 								src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face"
 								alt="Creator"
-								class="h-10 w-10 rounded-full"
+								class="h-12 w-12 rounded-full ring-2 ring-green-500 ring-offset-2 ring-offset-transparent"
 							/>
 							<div>
-								<p class="font-medium text-gray-900 dark:text-white">Music Producer</p>
-								<p class="text-sm text-gray-500 dark:text-gray-400">Tier 1 Member</p>
+								<p class="glass-text-primary font-bold">Music Producer</p>
+								<p class="glass-text-secondary text-sm">Tier 1 Member</p>
 							</div>
 						</div>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Expires in 12 days</p>
+						<p class="glass-text-secondary text-sm">
+							Expires in <span class="glass-text-primary font-semibold">12 days</span>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -291,15 +309,17 @@
 	</div>
 {:else}
 	<div class="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 lg:px-8">
-		<h1 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">Connect Your Wallet</h1>
-		<p class="mb-8 text-xl text-gray-600 dark:text-gray-300">
-			Please connect your wallet to access your dashboard.
-		</p>
-		<a
-			href="/"
-			class="inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
-		>
-			Go Home
-		</a>
+		<div class="glass mx-auto max-w-2xl rounded-3xl p-12">
+			<h1 class="glass-text-primary mb-4 text-4xl font-bold">Connect Your Wallet</h1>
+			<p class="glass-text-secondary mb-8 text-xl">
+				Please connect your wallet to access your dashboard.
+			</p>
+			<a
+				href="/"
+				class="glass-hover inline-flex items-center rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 font-bold text-white shadow-xl transition-all"
+			>
+				Go Home
+			</a>
+		</div>
 	</div>
 {/if}

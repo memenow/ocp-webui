@@ -107,49 +107,54 @@
 <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 	<!-- Header -->
 	<div class="mb-12 text-center">
-		<h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Browse Content</h1>
-		<p class="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
-			Discover exclusive content from talented creators. Access free posts or subscribe for premium
-			content.
-		</p>
+		<h1 class="glass-text-primary mb-6 text-5xl font-bold">Browse Content</h1>
+		<div class="glass mx-auto max-w-3xl rounded-3xl p-6">
+			<p class="text-xl">
+				Discover exclusive content from talented creators. Access free posts or subscribe for
+				premium content.
+			</p>
+		</div>
 	</div>
 
 	<!-- Filters -->
-	<div class="mb-8">
-		<div class="flex flex-wrap justify-center gap-2">
+	<div class="mb-10">
+		<div class="flex flex-wrap justify-center gap-3">
 			<button
-				class="rounded-lg px-4 py-2 font-medium transition-colors {selectedFilter === 'all'
-					? 'bg-blue-600 text-white'
-					: 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'}"
+				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter === 'all'
+					? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+					: 'glass glass-text-primary'}"
 				on:click={() => (selectedFilter = 'all')}
 			>
 				All Posts
 			</button>
 			<button
-				class="rounded-lg px-4 py-2 font-medium transition-colors {selectedFilter === 'public'
-					? 'bg-green-600 text-white'
-					: 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'}"
+				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter ===
+				'public'
+					? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg'
+					: 'glass glass-text-primary'}"
 				on:click={() => (selectedFilter = 'public')}
 			>
-				<Globe size={16} class="mr-1 inline" />
+				<Globe size={18} class="mr-2 inline" />
 				Public
 			</button>
 			<button
-				class="rounded-lg px-4 py-2 font-medium transition-colors {selectedFilter === 'subscriber'
-					? 'bg-blue-600 text-white'
-					: 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'}"
+				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter ===
+				'subscriber'
+					? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
+					: 'glass glass-text-primary'}"
 				on:click={() => (selectedFilter = 'subscriber')}
 			>
-				<Users size={16} class="mr-1 inline" />
+				<Users size={18} class="mr-2 inline" />
 				Subscriber
 			</button>
 			<button
-				class="rounded-lg px-4 py-2 font-medium transition-colors {selectedFilter === 'member'
-					? 'bg-purple-600 text-white'
-					: 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'}"
+				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter ===
+				'member'
+					? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg'
+					: 'glass glass-text-primary'}"
 				on:click={() => (selectedFilter = 'member')}
 			>
-				<Lock size={16} class="mr-1 inline" />
+				<Lock size={18} class="mr-2 inline" />
 				Member
 			</button>
 		</div>
@@ -157,27 +162,27 @@
 
 	<!-- Stats -->
 	<div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-4">
-		<div class="rounded-lg bg-white p-6 text-center shadow-sm dark:bg-gray-800">
-			<div class="mb-2 text-3xl font-bold text-blue-600 dark:text-blue-400">{posts.length}</div>
-			<div class="text-gray-600 dark:text-gray-300">Total Posts</div>
+		<div class="glass glass-hover rounded-3xl p-6 text-center">
+			<div class="mb-3 text-4xl font-bold text-blue-600 dark:text-blue-400">{posts.length}</div>
+			<div class="glass-text-secondary font-semibold">Total Posts</div>
 		</div>
-		<div class="rounded-lg bg-white p-6 text-center shadow-sm dark:bg-gray-800">
-			<div class="mb-2 text-3xl font-bold text-green-600 dark:text-green-400">
+		<div class="glass glass-hover rounded-3xl p-6 text-center">
+			<div class="mb-3 text-4xl font-bold text-green-600 dark:text-green-400">
 				{posts.filter((p) => p.accessLevel === AccessLevel.PUBLIC).length}
 			</div>
-			<div class="text-gray-600 dark:text-gray-300">Public Posts</div>
+			<div class="glass-text-secondary font-semibold">Public Posts</div>
 		</div>
-		<div class="rounded-lg bg-white p-6 text-center shadow-sm dark:bg-gray-800">
-			<div class="mb-2 text-3xl font-bold text-blue-600 dark:text-blue-400">
+		<div class="glass glass-hover rounded-3xl p-6 text-center">
+			<div class="mb-3 text-4xl font-bold text-blue-600 dark:text-blue-400">
 				{posts.filter((p) => p.accessLevel === AccessLevel.SUBSCRIBER).length}
 			</div>
-			<div class="text-gray-600 dark:text-gray-300">Subscriber Posts</div>
+			<div class="glass-text-secondary font-semibold">Subscriber Posts</div>
 		</div>
-		<div class="rounded-lg bg-white p-6 text-center shadow-sm dark:bg-gray-800">
-			<div class="mb-2 text-3xl font-bold text-purple-600 dark:text-purple-400">
+		<div class="glass glass-hover rounded-3xl p-6 text-center">
+			<div class="mb-3 text-4xl font-bold text-purple-600 dark:text-purple-400">
 				{posts.filter((p) => p.accessLevel === AccessLevel.MEMBER).length}
 			</div>
-			<div class="text-gray-600 dark:text-gray-300">Member Posts</div>
+			<div class="glass-text-secondary font-semibold">Member Posts</div>
 		</div>
 	</div>
 
@@ -186,37 +191,40 @@
 		{#each filteredPosts as post (post.id)}
 			{@const accessInfo = getAccessLevelInfo(post.accessLevel)}
 			{@const hasAccess = canAccess(post.accessLevel)}
-			<div
-				class="overflow-hidden rounded-lg bg-white shadow-sm transition-shadow hover:shadow-md dark:bg-gray-800"
-			>
+			<div class="glass glass-hover overflow-hidden rounded-3xl">
 				<!-- Post Header -->
 				<div class="p-6">
-					<div class="mb-4 flex items-start justify-between">
+					<div class="mb-5 flex items-start justify-between">
 						<div class="flex-1">
-							<div class="mb-2 flex items-center space-x-2">
-								<FileText size={20} class="text-gray-400 dark:text-gray-600" />
-								<span class="font-mono text-sm text-gray-500 dark:text-gray-400">
+							<div class="glass-text-secondary mb-3 flex items-center space-x-2">
+								<FileText size={20} />
+								<span class="font-mono text-sm font-semibold">
 									{formatAddress(post.id)}
 								</span>
 							</div>
-							<p class="text-sm text-gray-600 dark:text-gray-400">
-								by {formatAddress(post.creatorId)}
+							<p class="glass-text-secondary text-sm font-medium">
+								by <span class="glass-text-primary font-bold">{formatAddress(post.creatorId)}</span>
 							</p>
 						</div>
 						<div
-							class="flex items-center space-x-1 rounded-full px-2.5 py-1 text-xs font-medium {accessInfo.bgColor} {accessInfo.color}"
+							class="flex items-center space-x-1 rounded-xl bg-gradient-to-r px-3 py-1.5 text-xs font-bold text-white shadow-md {post.accessLevel ===
+							AccessLevel.PUBLIC
+								? 'from-green-500 to-green-600'
+								: post.accessLevel === AccessLevel.SUBSCRIBER
+									? 'from-blue-500 to-blue-600'
+									: 'from-purple-500 to-purple-600'}"
 						>
-							<svelte:component this={accessInfo.icon} size={12} />
+							<svelte:component this={accessInfo.icon} size={14} />
 							<span>{accessInfo.label}</span>
 						</div>
 					</div>
 
-					<p class="mb-4 line-clamp-3 text-gray-900 dark:text-white">
+					<p class="glass-text-primary mb-4 line-clamp-3 font-medium">
 						{post.description}
 					</p>
 
-					<div class="mb-4 text-xs text-gray-500 dark:text-gray-400">
-						{accessInfo.description}
+					<div class="glass mb-5 rounded-xl p-3 text-sm">
+						<p class="glass-text-secondary font-semibold">{accessInfo.description}</p>
 					</div>
 
 					<!-- Actions -->
@@ -226,7 +234,7 @@
 								href={post.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="flex-1 rounded-lg bg-blue-600 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-blue-700"
+								class="glass-hover flex-1 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-3 text-center font-bold text-white shadow-lg transition-all"
 							>
 								View Content
 							</a>
@@ -234,20 +242,20 @@
 								href={post.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="flex items-center justify-center rounded-lg border border-gray-300 px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+								class="glass glass-text-primary glass-hover flex items-center justify-center rounded-2xl px-4 py-3 transition-all"
 							>
-								<ExternalLink size={16} />
+								<ExternalLink size={18} />
 							</a>
 						{:else}
 							<button
-								class="flex-1 cursor-not-allowed rounded-lg bg-gray-400 px-4 py-2 font-medium text-white"
+								class="glass flex-1 cursor-not-allowed rounded-2xl px-4 py-3 font-bold opacity-60"
 							>
 								{post.accessLevel === AccessLevel.SUBSCRIBER
 									? 'Subscribe Required'
 									: 'Membership Required'}
 							</button>
 							<button
-								class="flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+								class="glass-hover rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-3 font-bold text-white shadow-lg transition-all"
 							>
 								{post.accessLevel === AccessLevel.SUBSCRIBER ? 'Subscribe' : 'Join'}
 							</button>
@@ -256,14 +264,14 @@
 				</div>
 
 				<!-- Post Footer -->
-				<div class="bg-gray-50 px-6 py-4 dark:bg-gray-700">
-					<div class="flex justify-between text-sm text-gray-600 dark:text-gray-300">
-						<div class="flex items-center space-x-1">
-							<Calendar size={14} />
+				<div class="border-t border-white/20 px-6 py-4">
+					<div class="glass-text-secondary flex justify-between text-sm font-semibold">
+						<div class="flex items-center space-x-2">
+							<Calendar size={16} />
 							<span>2 days ago</span>
 						</div>
-						<div class="flex items-center space-x-1">
-							<Users size={14} />
+						<div class="flex items-center space-x-2">
+							<Users size={16} />
 							<span>42 views</span>
 						</div>
 					</div>
@@ -274,10 +282,10 @@
 
 	<!-- Empty State -->
 	{#if filteredPosts.length === 0}
-		<div class="py-12 text-center">
-			<FileText class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-600" />
-			<h3 class="mb-2 text-lg font-medium text-gray-900 dark:text-white">No posts found</h3>
-			<p class="text-gray-600 dark:text-gray-300">
+		<div class="glass rounded-3xl py-16 text-center">
+			<FileText class="glass-text-secondary mx-auto mb-4 h-16 w-16" />
+			<h3 class="glass-text-primary mb-2 text-xl font-bold">No posts found</h3>
+			<p class="glass-text-secondary">
 				Try adjusting your filters or check back later for new content.
 			</p>
 		</div>
@@ -285,23 +293,31 @@
 
 	<!-- Call to Action -->
 	<div class="mt-16 text-center">
-		<div class="rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 p-8 text-white">
-			<h2 class="mb-4 text-2xl font-bold">Want Access to Premium Content?</h2>
-			<p class="mx-auto mb-6 max-w-2xl text-purple-100">
-				Subscribe to your favorite creators or become a member to unlock exclusive content and
-				support the creators you love.
-			</p>
-			<div class="flex flex-col justify-center gap-4 sm:flex-row">
-				<button
-					class="rounded-lg bg-white px-8 py-3 font-semibold text-purple-600 transition-colors hover:bg-gray-100"
-				>
-					Browse Creators
-				</button>
-				<button
-					class="rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-purple-600"
-				>
-					Learn More
-				</button>
+		<div
+			class="glass-strong relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-600 p-12 text-white shadow-2xl"
+		>
+			<!-- Decorative Elements -->
+			<div class="absolute top-10 left-10 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
+			<div class="absolute right-10 bottom-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+
+			<div class="relative">
+				<h2 class="mb-5 text-3xl font-bold">Want Access to Premium Content?</h2>
+				<p class="mx-auto mb-8 max-w-2xl text-lg">
+					Subscribe to your favorite creators or become a member to unlock exclusive content and
+					support the creators you love.
+				</p>
+				<div class="flex flex-col justify-center gap-4 sm:flex-row">
+					<button
+						class="glass-hover rounded-2xl bg-white px-10 py-4 text-lg font-bold text-purple-600 shadow-xl transition-all"
+					>
+						Browse Creators
+					</button>
+					<button
+						class="glass glass-hover rounded-2xl px-10 py-4 text-lg font-bold text-white transition-all"
+					>
+						Learn More
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>

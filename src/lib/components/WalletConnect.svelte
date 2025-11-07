@@ -56,13 +56,16 @@
 
 {#if $walletConnected && $walletAddress}
 	<div class="flex items-center space-x-3">
-		<div class="hidden items-center space-x-2 text-sm text-gray-600 sm:flex dark:text-gray-400">
-			<Wallet size={16} />
-			<span class="font-mono">{formatAddress($walletAddress)}</span>
+		<div
+			class="glass glass-hover hidden items-center space-x-2 rounded-xl px-4 py-2 text-sm sm:flex"
+		>
+			<Wallet size={16} class="text-blue-600 dark:text-blue-400" />
+			<span class="glass-text-primary font-mono font-semibold">{formatAddress($walletAddress)}</span
+			>
 		</div>
 		<button
 			on:click={disconnectWallet}
-			class="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-red-600 dark:text-gray-300 dark:hover:text-red-400"
+			class="glass glass-hover glass-text-primary flex items-center space-x-1 rounded-xl px-3 py-2 text-sm font-medium transition-all hover:text-red-600 dark:hover:text-red-400"
 		>
 			<LogOut size={16} />
 			<span class="hidden sm:inline">Disconnect</span>
@@ -72,9 +75,9 @@
 	<button
 		on:click={connectWallet}
 		disabled={isConnecting}
-		class="flex items-center space-x-2 rounded-lg bg-blue-600 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-700 disabled:bg-blue-400"
+		class="glass-hover flex items-center space-x-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 px-5 py-2.5 font-semibold text-white shadow-lg transition-all hover:shadow-xl disabled:opacity-50"
 	>
-		<Wallet size={16} />
+		<Wallet size={18} />
 		<span>{isConnecting ? 'Connecting...' : 'Connect Wallet'}</span>
 	</button>
 {/if}
