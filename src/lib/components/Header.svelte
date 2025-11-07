@@ -10,7 +10,9 @@
 			<!-- Logo and Navigation -->
 			<div class="flex items-center space-x-8">
 				<a href="/" class="flex items-center space-x-2 transition-transform hover:scale-105">
-					<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg">
+					<div
+						class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg"
+					>
 						<span class="text-sm font-bold text-white">OCP</span>
 					</div>
 					<span class="glass-text-primary text-xl font-bold">Open Content Protocol</span>

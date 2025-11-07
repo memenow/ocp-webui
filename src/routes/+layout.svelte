@@ -3,7 +3,7 @@
 	import '../app.css';
 </script>
 
-<div class="min-h-screen bg-glass-gradient">
+<div class="bg-glass-gradient min-h-screen">
 	<Header />
 	<main class="flex-1">
 		<slot />

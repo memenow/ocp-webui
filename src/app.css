@@ -74,12 +74,17 @@
 
 /* Gradient Background */
 .bg-glass-gradient {
-	background: linear-gradient(135deg, var(--glass-bg-gradient-start) 0%, var(--glass-bg-gradient-end) 100%);
+	background: linear-gradient(
+		135deg,
+		var(--glass-bg-gradient-start) 0%,
+		var(--glass-bg-gradient-end) 100%
+	);
 }
 
 /* Smooth Animations */
 @keyframes glass-float {
-	0%, 100% {
+	0%,
+	100% {
 		transform: translateY(0px);
 	}
 	50% {

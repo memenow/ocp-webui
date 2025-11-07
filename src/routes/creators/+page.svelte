@@ -81,9 +81,7 @@
 	<!-- Creators Grid -->
 	<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 		{#each creators as creator (creator.id)}
-			<div
-				class="glass glass-hover overflow-hidden rounded-3xl"
-			>
+			<div class="glass glass-hover overflow-hidden rounded-3xl">
 				<!-- Creator Header -->
 				<div class="p-6">
 					<div class="mb-5 flex items-center space-x-4">
@@ -164,24 +162,24 @@
 		<div class="glass rounded-3xl py-16 text-center">
 			<Users class="glass-text-secondary mx-auto mb-4 h-16 w-16" />
 			<h3 class="glass-text-primary mb-2 text-xl font-bold">No creators found</h3>
-			<p class="glass-text-secondary">
-				Be the first to create content on the platform!
-			</p>
+			<p class="glass-text-secondary">Be the first to create content on the platform!</p>
 		</div>
 	{/if}
 
 	<!-- Call to Action -->
 	<div class="mt-16 text-center">
-		<div class="glass-strong relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 p-12 text-white shadow-2xl">
+		<div
+			class="glass-strong relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 p-12 text-white shadow-2xl"
+		>
 			<!-- Decorative Elements -->
-			<div class="absolute left-10 top-10 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
-			<div class="absolute bottom-10 right-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+			<div class="absolute top-10 left-10 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
+			<div class="absolute right-10 bottom-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
 
 			<div class="relative">
 				<h2 class="mb-5 text-3xl font-bold">Become a Creator</h2>
 				<p class="mx-auto mb-8 max-w-2xl text-lg">
-					Join our platform and start monetizing your content. Connect with your audience and build a
-					sustainable creator economy.
+					Join our platform and start monetizing your content. Connect with your audience and build
+					a sustainable creator economy.
 				</p>
 				<button
 					class="glass-hover rounded-2xl bg-white px-10 py-4 text-lg font-bold text-purple-600 shadow-xl transition-all"

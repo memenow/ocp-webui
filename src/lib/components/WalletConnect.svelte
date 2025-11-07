@@ -56,9 +56,12 @@
 
 {#if $walletConnected && $walletAddress}
 	<div class="flex items-center space-x-3">
-		<div class="glass glass-hover hidden items-center space-x-2 rounded-xl px-4 py-2 text-sm sm:flex">
+		<div
+			class="glass glass-hover hidden items-center space-x-2 rounded-xl px-4 py-2 text-sm sm:flex"
+		>
 			<Wallet size={16} class="text-blue-600 dark:text-blue-400" />
-			<span class="glass-text-primary font-mono font-semibold">{formatAddress($walletAddress)}</span>
+			<span class="glass-text-primary font-mono font-semibold">{formatAddress($walletAddress)}</span
+			>
 		</div>
 		<button
 			on:click={disconnectWallet}

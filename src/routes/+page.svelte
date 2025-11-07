@@ -12,11 +12,13 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="relative overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 py-20 text-white">
+<section
+	class="relative overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 py-20 text-white"
+>
 	<div class="absolute inset-0 bg-black/10"></div>
 	<!-- Decorative Elements -->
-	<div class="absolute left-10 top-20 h-64 w-64 rounded-full bg-blue-400/20 blur-3xl"></div>
-	<div class="absolute bottom-20 right-10 h-80 w-80 rounded-full bg-purple-400/20 blur-3xl"></div>
+	<div class="absolute top-20 left-10 h-64 w-64 rounded-full bg-blue-400/20 blur-3xl"></div>
+	<div class="absolute right-10 bottom-20 h-80 w-80 rounded-full bg-purple-400/20 blur-3xl"></div>
 
 	<div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
 		<div class="text-center">
@@ -76,9 +78,7 @@
 				>
 					<Shield class="text-white" size={36} />
 				</div>
-				<h3 class="glass-text-primary mb-3 text-xl font-bold">
-					Censorship Resistant
-				</h3>
+				<h3 class="glass-text-primary mb-3 text-xl font-bold">Censorship Resistant</h3>
 				<p class="glass-text-secondary">
 					Content stored on blockchain ensures no single entity can censor or remove your work.
 				</p>
@@ -128,9 +128,7 @@
 <section class="py-20">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="mb-16 text-center">
-			<h2 class="glass-text-primary mb-4 text-4xl font-bold md:text-5xl">
-				How It Works
-			</h2>
+			<h2 class="glass-text-primary mb-4 text-4xl font-bold md:text-5xl">How It Works</h2>
 			<p class="glass-text-secondary mx-auto max-w-3xl text-xl">
 				Simple steps to start creating, sharing, and monetizing content on the decentralized web.
 			</p>
@@ -156,9 +154,7 @@
 				>
 					2
 				</div>
-				<h3 class="glass-text-primary mb-4 text-2xl font-bold">
-					Create or Subscribe
-				</h3>
+				<h3 class="glass-text-primary mb-4 text-2xl font-bold">Create or Subscribe</h3>
 				<p class="glass-text-secondary text-lg">
 					Become a creator to publish content, or subscribe to your favorite creators to access
 					exclusive content.
@@ -182,11 +178,13 @@
 </section>
 
 <!-- CTA Section -->
-<section class="relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 py-24">
+<section
+	class="relative overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 py-24"
+>
 	<div class="absolute inset-0 bg-black/10"></div>
 	<!-- Decorative Elements -->
-	<div class="absolute left-1/4 top-10 h-48 w-48 rounded-full bg-white/10 blur-3xl"></div>
-	<div class="absolute bottom-10 right-1/4 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
+	<div class="absolute top-10 left-1/4 h-48 w-48 rounded-full bg-white/10 blur-3xl"></div>
+	<div class="absolute right-1/4 bottom-10 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
 
 	<div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
 		<h2 class="mb-6 text-4xl font-bold text-white drop-shadow-lg md:text-5xl">

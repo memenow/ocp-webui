@@ -110,8 +110,8 @@
 		<h1 class="glass-text-primary mb-6 text-5xl font-bold">Browse Content</h1>
 		<div class="glass mx-auto max-w-3xl rounded-3xl p-6">
 			<p class="text-xl">
-				Discover exclusive content from talented creators. Access free posts or subscribe for premium
-				content.
+				Discover exclusive content from talented creators. Access free posts or subscribe for
+				premium content.
 			</p>
 		</div>
 	</div>
@@ -128,7 +128,8 @@
 				All Posts
 			</button>
 			<button
-				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter === 'public'
+				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter ===
+				'public'
 					? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg'
 					: 'glass glass-text-primary'}"
 				on:click={() => (selectedFilter = 'public')}
@@ -137,7 +138,8 @@
 				Public
 			</button>
 			<button
-				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter === 'subscriber'
+				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter ===
+				'subscriber'
 					? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg'
 					: 'glass glass-text-primary'}"
 				on:click={() => (selectedFilter = 'subscriber')}
@@ -146,7 +148,8 @@
 				Subscriber
 			</button>
 			<button
-				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter === 'member'
+				class="glass-hover rounded-2xl px-6 py-3 font-bold transition-all {selectedFilter ===
+				'member'
 					? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg'
 					: 'glass glass-text-primary'}"
 				on:click={() => (selectedFilter = 'member')}
@@ -188,9 +191,7 @@
 		{#each filteredPosts as post (post.id)}
 			{@const accessInfo = getAccessLevelInfo(post.accessLevel)}
 			{@const hasAccess = canAccess(post.accessLevel)}
-			<div
-				class="glass glass-hover overflow-hidden rounded-3xl"
-			>
+			<div class="glass glass-hover overflow-hidden rounded-3xl">
 				<!-- Post Header -->
 				<div class="p-6">
 					<div class="mb-5 flex items-start justify-between">
@@ -206,7 +207,12 @@
 							</p>
 						</div>
 						<div
-							class="flex items-center space-x-1 rounded-xl bg-gradient-to-r px-3 py-1.5 text-xs font-bold text-white shadow-md {post.accessLevel === AccessLevel.PUBLIC ? 'from-green-500 to-green-600' : post.accessLevel === AccessLevel.SUBSCRIBER ? 'from-blue-500 to-blue-600' : 'from-purple-500 to-purple-600'}"
+							class="flex items-center space-x-1 rounded-xl bg-gradient-to-r px-3 py-1.5 text-xs font-bold text-white shadow-md {post.accessLevel ===
+							AccessLevel.PUBLIC
+								? 'from-green-500 to-green-600'
+								: post.accessLevel === AccessLevel.SUBSCRIBER
+									? 'from-blue-500 to-blue-600'
+									: 'from-purple-500 to-purple-600'}"
 						>
 							<svelte:component this={accessInfo.icon} size={14} />
 							<span>{accessInfo.label}</span>
@@ -287,10 +293,12 @@
 
 	<!-- Call to Action -->
 	<div class="mt-16 text-center">
-		<div class="glass-strong relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-600 p-12 text-white shadow-2xl">
+		<div
+			class="glass-strong relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-600 p-12 text-white shadow-2xl"
+		>
 			<!-- Decorative Elements -->
-			<div class="absolute left-10 top-10 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
-			<div class="absolute bottom-10 right-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+			<div class="absolute top-10 left-10 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
+			<div class="absolute right-10 bottom-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
 
 			<div class="relative">
 				<h2 class="mb-5 text-3xl font-bold">Want Access to Premium Content?</h2>

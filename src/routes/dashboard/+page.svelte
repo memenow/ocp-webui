@@ -51,7 +51,9 @@
 			<h1 class="glass-text-primary mb-3 text-4xl font-bold">Dashboard</h1>
 			<div class="glass inline-block rounded-2xl px-6 py-3">
 				<p class="glass-text-secondary font-medium">
-					Welcome back, <span class="glass-text-primary font-bold">{formatAddress($walletAddress || '')}</span>
+					Welcome back, <span class="glass-text-primary font-bold"
+						>{formatAddress($walletAddress || '')}</span
+					>
 				</p>
 			</div>
 		</div>
@@ -160,8 +162,12 @@
 				<div class="p-6">
 					<div class="space-y-5">
 						{#each recentActivity as activity, index (index)}
-							<div class="glass glass-hover flex items-start space-x-4 rounded-2xl p-4 transition-all">
-								<div class="mt-2 h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg"></div>
+							<div
+								class="glass glass-hover flex items-start space-x-4 rounded-2xl p-4 transition-all"
+							>
+								<div
+									class="mt-2 h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg"
+								></div>
 								<div class="flex-1">
 									<p class="glass-text-primary text-sm font-semibold">{activity.title}</p>
 									<p class="glass-text-secondary text-xs">{activity.time}</p>
@@ -180,48 +186,42 @@
 					</div>
 					<div class="p-6">
 						<div class="space-y-4">
-							<button
-								class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all"
-							>
+							<button class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all">
 								<div class="flex items-center space-x-4">
-									<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg"
+									>
 										<Plus class="text-white" size={22} />
 									</div>
 									<div>
 										<p class="glass-text-primary font-bold">Create New Post</p>
-										<p class="glass-text-secondary text-sm">
-											Share content with your audience
-										</p>
+										<p class="glass-text-secondary text-sm">Share content with your audience</p>
 									</div>
 								</div>
 							</button>
-							<button
-								class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all"
-							>
+							<button class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all">
 								<div class="flex items-center space-x-4">
-									<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg"
+									>
 										<Users class="text-white" size={22} />
 									</div>
 									<div>
 										<p class="glass-text-primary font-bold">Manage Subscribers</p>
-										<p class="glass-text-secondary text-sm">
-											View and manage your subscriber base
-										</p>
+										<p class="glass-text-secondary text-sm">View and manage your subscriber base</p>
 									</div>
 								</div>
 							</button>
-							<button
-								class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all"
-							>
+							<button class="glass glass-hover w-full rounded-2xl p-5 text-left transition-all">
 								<div class="flex items-center space-x-4">
-									<div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-green-400 to-green-600 shadow-lg">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-green-400 to-green-600 shadow-lg"
+									>
 										<TrendingUp class="text-white" size={22} />
 									</div>
 									<div>
 										<p class="glass-text-primary font-bold">Analytics</p>
-										<p class="glass-text-secondary text-sm">
-											Track your performance and earnings
-										</p>
+										<p class="glass-text-secondary text-sm">Track your performance and earnings</p>
 									</div>
 								</div>
 							</button>
@@ -230,7 +230,9 @@
 				</div>
 			{:else}
 				<!-- Become Creator CTA -->
-				<div class="glass-strong overflow-hidden rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-xl">
+				<div
+					class="glass-strong overflow-hidden rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 p-8 text-white shadow-xl"
+				>
 					<div class="relative">
 						<h2 class="mb-4 text-2xl font-bold">Become a Creator</h2>
 						<p class="mb-6">
@@ -265,7 +267,9 @@
 								<p class="glass-text-secondary text-sm">Tier 2 Member</p>
 							</div>
 						</div>
-						<p class="glass-text-secondary text-sm">Expires in <span class="glass-text-primary font-semibold">25 days</span></p>
+						<p class="glass-text-secondary text-sm">
+							Expires in <span class="glass-text-primary font-semibold">25 days</span>
+						</p>
 					</div>
 					<div class="glass glass-hover rounded-2xl p-5">
 						<div class="mb-4 flex items-center space-x-3">
@@ -279,7 +283,9 @@
 								<p class="glass-text-secondary text-sm">Subscriber</p>
 							</div>
 						</div>
-						<p class="glass-text-secondary text-sm"><span class="glass-text-primary font-semibold">Active</span> subscription</p>
+						<p class="glass-text-secondary text-sm">
+							<span class="glass-text-primary font-semibold">Active</span> subscription
+						</p>
 					</div>
 					<div class="glass glass-hover rounded-2xl p-5">
 						<div class="mb-4 flex items-center space-x-3">
@@ -293,7 +299,9 @@
 								<p class="glass-text-secondary text-sm">Tier 1 Member</p>
 							</div>
 						</div>
-						<p class="glass-text-secondary text-sm">Expires in <span class="glass-text-primary font-semibold">12 days</span></p>
+						<p class="glass-text-secondary text-sm">
+							Expires in <span class="glass-text-primary font-semibold">12 days</span>
+						</p>
 					</div>
 				</div>
 			</div>
